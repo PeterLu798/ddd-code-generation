@@ -1,0 +1,35 @@
+<idea-plugin>
+  <id>test.com.hqwx.codegeneration</id>
+  <name>test-ddd-code-generation</name>
+  <version>1.0</version>
+  <vendor email="xxx@hqwx.com" url="http://www.hqwx.com">hqwx</vendor>
+
+  <description>
+    代码自动生成插件，用于辅助SpringBoot项目生成对应的包目录（使用DDD四层目录结构）
+    可以根据定义的PO类生成对应的表sql和相关各层的实现类，简化开发重复代码编写
+    @author test 2022-01-27
+  </description>
+
+  <change-notes>
+    2022-01-22 add
+  </change-notes>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+  <idea-version since-build="183.0"/>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="MyCodeGenerationForDddMainAction" class="com.hqwx.codegeneration.action.MyCodeGenerationForDddMainAction"
+            text="My Code Generation for DDD" description="环球DDD代码生成工具，可以生成四层包结构、PO类对应SQL和各层基础类代码文件等">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
